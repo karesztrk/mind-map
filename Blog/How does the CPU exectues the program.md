@@ -1,4 +1,10 @@
 ---
-tags: cpu, machine, computer, memory
+tags:
+  - cpu
+  - machine
+  - computer
+  - memory
 ---
+
 https://cpu.land/
+

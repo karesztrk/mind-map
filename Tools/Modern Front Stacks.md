@@ -1,4 +1,11 @@
 ---
-tags: html, ui, ux, font, css, stack
+tags: html,
+  - ui
+  - ux
+  - font
+  - css
+  - stack
 ---
+
 https://modernfontstacks.com/
+

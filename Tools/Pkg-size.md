@@ -1,4 +1,11 @@
 ---
-tags: npm, size, bundle, package, install
+tags:
+  - npm
+  - size
+  - bundle
+  - package
+  - install
 ---
+
 https://pkg-size.dev/
+

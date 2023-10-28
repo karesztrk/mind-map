@@ -1,4 +1,10 @@
 ---
-tags: html, ui, gradient, css
+tags:
+  - html
+  - ui
+  - gradient
+  - css
 ---
+
 https://gradient.style/
+

@@ -1,4 +1,9 @@
 ---
-tags: draw, handwrite, svg
+tags:
+  - draw
+  - handwrite
+  - svg
 ---
+
 https://www.calligrapher.ai/
+

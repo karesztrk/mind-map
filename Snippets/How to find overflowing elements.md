@@ -1,7 +1,11 @@
 ---
-tags: javascript, js, overflow, css, trick
+tags:
+  - javascript
+  - js
+  - overflow
+  - css
+  - trick
 ---
-
 
 ```
 document.querySelectorAll("*").forEach(el => {
@@ -10,3 +14,4 @@ document.querySelectorAll("*").forEach(el => {
   }
 })
 ```
+

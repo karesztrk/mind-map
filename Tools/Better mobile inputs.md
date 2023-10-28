@@ -1,4 +1,10 @@
 ---
-tags: html, ui, input, mobile
+tags:
+  - html
+  - ui
+  - input
+  - mobile
 ---
+
 https://better-mobile-inputs.netlify.app/
+

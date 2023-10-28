@@ -1,4 +1,11 @@
 ---
-tags: react, js, polymorphic, typescript, component
+tags:
+  - react
+  - js
+  - polymorphic
+  - typescript
+  - component
 ---
+
 https://blog.logrocket.com/build-strongly-typed-polymorphic-components-react-typescript/
+

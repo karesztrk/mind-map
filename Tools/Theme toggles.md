@@ -1,4 +1,13 @@
 ---
-tags: html, ui, css, theme, mode, dark, light
+tags:
+  - html
+  - ui
+  - css
+  - theme
+  - mode
+  - dark
+  - light
 ---
+
 https://toggles.dev/
+

@@ -1,4 +1,19 @@
 ---
-tags: js, javascript, react, svelte, compare, component, vue, angular, lit, ember, solidjs, qwik, alpinejs
+tags:
+  - js
+  - javascript
+  - react
+  - svelte
+  - compare
+  - component
+  - vue
+  - angular
+  - lit
+  - ember
+  - solidjs
+  - qwik
+  - alpinejs
 ---
+
 https://pkg-size.dev/
+

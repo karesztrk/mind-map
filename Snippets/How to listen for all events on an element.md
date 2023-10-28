@@ -1,7 +1,11 @@
 ---
-tags: javascript, js, event, element, trick
+tags:
+  - javascript
+  - js
+  - event
+  - element
+  - trick
 ---
-
 
 ```
 <!DOCTYPE html>
@@ -38,7 +42,7 @@ tags: javascript, js, event, element, trick
     // Attach a wildcard event listener to capture all events
     for (const eventType in window) {
       if (eventType.startsWith('on')) {
-        myElement.addEventListener(eventType.slice(2), logEvent);
+        myElement.addEventListener(eventType.slice(2) logEvent);
       }
     }
 
@@ -47,3 +51,4 @@ tags: javascript, js, event, element, trick
 </html>
 
 ```
+

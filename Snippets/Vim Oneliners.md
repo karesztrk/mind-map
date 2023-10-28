@@ -1,6 +1,12 @@
 ---
-tags: vim, snippet, oneliner, utility, command
+tags:
+  - vim
+  - snippet
+  - oneliner
+  - utility
+  - command
 ---
+
 Replace all matches in the Quickfix list
 
 ```
@@ -28,5 +34,6 @@ Replace all matches in the Quickfix list
 Sum of al numbers present in a file
 
 ```
-:put =eval(join(getline(1, '$'), '+'))
+:put =eval(join(getline(1 '$'), '+'))
 ```
+

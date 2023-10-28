@@ -1,4 +1,11 @@
 ---
-tags: tool, css, shape, divider, wave, 
+tags:
+  - tool
+  - css
+  - shape
+  - divider
+  - wave
 ---
+
 https://www.shapedivider.app/
+

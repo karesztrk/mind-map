@@ -1,5 +1,11 @@
 ---
-tags: javascript, js, orm, sql, database
+tags:
+  - javascript
+  - js
+  - orm
+  - sql
+  - database
 ---
 
 https://github.com/stephenh/joist-ts
+
