@@ -6,6 +6,5 @@ tags:
   - component
   - alert
 ---
-
 https://github.com/KittyGiraudel/a11y-dialog
 

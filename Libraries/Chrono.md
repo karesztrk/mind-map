@@ -9,7 +9,6 @@ tags:
   - language
   - chrono
 ---
-
 A natural language date parser in Javascript.
 https://github.com/wanasit/chrono
 

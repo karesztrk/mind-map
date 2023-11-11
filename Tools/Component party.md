@@ -14,6 +14,5 @@ tags:
   - qwik
   - alpinejs
 ---
-
-https://pkg-size.dev/
+https://component-party.dev/
 

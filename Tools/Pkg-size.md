@@ -6,6 +6,5 @@ tags:
   - package
   - install
 ---
-
 https://pkg-size.dev/
 

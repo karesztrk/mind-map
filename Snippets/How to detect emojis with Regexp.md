@@ -6,6 +6,5 @@ tags:
   - emoji
   - detect
 ---
-
 https://v8.dev/features/regexp-v-flag
 

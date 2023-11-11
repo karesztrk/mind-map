@@ -6,7 +6,6 @@ tags:
   - css
   - trick
 ---
-
 ```
 document.querySelectorAll("*").forEach(el => {
   if(el.offsetWidth > document.documentElement.offsetWidth) {

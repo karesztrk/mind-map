@@ -7,6 +7,5 @@ tags:
   - chart
   - diagram
 ---
-
 https://github.com/observablehq/plot
 

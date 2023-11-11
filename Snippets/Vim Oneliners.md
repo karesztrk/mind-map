@@ -6,7 +6,6 @@ tags:
   - utility
   - command
 ---
-
 Replace all matches in the Quickfix list
 
 ```

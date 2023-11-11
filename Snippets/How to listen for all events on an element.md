@@ -6,7 +6,6 @@ tags:
   - element
   - trick
 ---
-
 ```
 <!DOCTYPE html>
 <html>

@@ -9,7 +9,6 @@ tags:
   - docker
   - next
 ---
-
 A simple stack to start weekend AI projects
 https://github.com/a16z-infra/ai-getting-started
 

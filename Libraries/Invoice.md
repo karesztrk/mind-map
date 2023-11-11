@@ -5,6 +5,5 @@ tags:
   - invoice
   - cli
 ---
-
 https://github.com/maaslalani/invoice
 

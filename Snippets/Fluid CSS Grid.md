@@ -4,8 +4,7 @@ tags:
   - grid
   - fluid
 ---
-
 ```
-grid-template-columns: repeat(auto-fit minmax(min(100%, 150px), 1fr)
+grid-template-columns: repeat(auto-fit, minmax(min(100%, 50px), 1fr));
 ```
 

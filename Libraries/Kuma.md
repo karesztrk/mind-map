@@ -8,7 +8,6 @@ tags:
   - style
   - theme
 ---
-
 A Headless, Utility-First, and Zero-Runtime UI Component Library
 https://github.com/poteboy/kuma-ui
 

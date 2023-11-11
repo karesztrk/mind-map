@@ -5,6 +5,5 @@ tags:
   - gradient
   - css
 ---
-
 https://gradient.style/
 

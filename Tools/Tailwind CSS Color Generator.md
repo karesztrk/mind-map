@@ -7,6 +7,5 @@ tags:
   - tailwind
   - generator
 ---
-
 https://uicolors.app/create
 

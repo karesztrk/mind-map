@@ -5,6 +5,5 @@ tags:
   - minifier
   - benchmark
 ---
-
 https://github.com/privatenumber/minification-benchmarks
 
