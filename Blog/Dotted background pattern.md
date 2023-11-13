@@ -26,19 +26,19 @@ This approach involves a 3/4 spin with a transparent color, followed by a single
 Here, two overlapping linear gradients are used to stack on top of each other. This effectively masks out only the dots themselves. 
 *Problem*: The only challenge is to carefully manage the overall height to avoid dot overflow.
 ```css
-  background: repeating-linear-gradient(
-	  90deg,
-	  transparent 0,
-	  transparent var(--_dot-size),
-	  var(--color-background) var(--_edge-end),
-	  var(--color-background) var(--_gardient-end)
-	),
-	repeating-linear-gradient(
-	  180deg,
-	  var(--color-title) 0,
-	  var(--color-title) var(--_dot-size),
-	  transparent var(--_edge-end),
-	  transparent var(--_gardient-end)
-	),
-	var(--color-background);
+background: repeating-linear-gradient(
+  90deg,
+  transparent 0,
+  transparent var(--_dot-size),
+  var(--color-background) var(--_edge-end),
+  var(--color-background) var(--_gardient-end)
+),
+repeating-linear-gradient(
+  180deg,
+  var(--color-title) 0,
+  var(--color-title) var(--_dot-size),
+  transparent var(--_edge-end),
+  transparent var(--_gardient-end)
+),
+var(--color-background);
 ```

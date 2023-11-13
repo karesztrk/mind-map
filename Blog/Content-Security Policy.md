@@ -16,7 +16,7 @@ Now, the million-dollar question: How can you implement a CSP policy on your web
 ## Example
 In the next sample we disable default source in order to avoid browser fallback loading using 'default-src' locations. In addition, we allow inline `<script>` and `<style>` tags because without SSR we would need to add hashes for maximum security. As well as, we allow `data:` as image source as defined in [CSP source vales on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/Sources).
 
-```
+```http
 Content-Security-Policy
 	default-src 'none';
 	script-src 'self' 'unsafe-inline';
