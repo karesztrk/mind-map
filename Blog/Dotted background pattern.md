@@ -46,3 +46,7 @@ background: repeating-linear-gradient(
   var(--color-background);
 }
 ```
+
+## Border image
+There is also another less popular option which utilizes `border-image`. The idea is that you can draw a pattern and pass it as an image (PNG or SVG) in Base64 format. Theres a very interesting tool to draw borders called https://maxbittker.github.io/broider/.
+Problem: The color of the dots are backed into the image.

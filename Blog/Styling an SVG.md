@@ -107,7 +107,7 @@ interface IconComponentProps extends ComponentPropsWithoutRef<'svg'> {
     title?: string;
 }
 
-const baseClass = 'cxn-icon';
+const baseClass = 'icon';
 
 const IconComponent: FC<IconComponentProps> = ({
     src,

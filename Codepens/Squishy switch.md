@@ -8,6 +8,5 @@ tags:
   - squishy
   - input
 ---
-
 https://codepen.io/nicolasjesenberger/pen/bGQwBYo
 
