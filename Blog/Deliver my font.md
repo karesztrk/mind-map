@@ -6,9 +6,8 @@ tags:
   - font
 date: 2023-11-25
 ---
-In this post, i want to show my techniques for delivering web fonts efficiently.
+In this post, I want to show my techniques for delivering web fonts efficiently.
 I've always harbored a strong inclination toward aesthetic elements in the world of fonts. It fascinates me that we can convey the same meaning with different styles, creating a diverse user experience. Whether it's Franklin for news, Mono for scientific contexts, or Inter/Noto/Montserrat/Nunito for general use 🤓, the choice of typeface can profoundly impact the overall feel of the content. However, it's important to note that I'm a hobbyist, not a professional font designer or calligrapher.
-
 In this post, I'd like to share my techniques for efficiently delivering web fonts.
 ## Pick a Font
 Choosing a font is perhaps the most challenging and abstract task. It involves deciding the tone you want for your page. I usually explore options on [Google Fonts](https://fonts.google.com/), [1001Fonts](https://www.1001fonts.com/), or [Font Squirrel](https://www.fontsquirrel.com/). [Variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) are my preference due to their versatility in style, and you can find them on [Google Fonts](https://fonts.google.com/variablefonts) or [Variable Fonts](https://v-fonts.com/).
@@ -21,7 +20,6 @@ Regardless of whether it's a variable font, we typically define a font like this
   font-weight: 400;
   font-display: fallback;
   src: url("../fonts/Myfont.woff2") format("woff2");
-
 }
 ```
 This definition states that whenever we use `font-family: "MyFont"` at `font-weight: 400`, the font will load from `Myfont.woff2`.
@@ -59,7 +57,6 @@ I tend to always forget the meaning. So i tell you that if your font is not miss
   font-family: "MyVFont", sans-serif;
 }
 ```
-
 ## Optimize a font
 At this point, we have successfully delivered the font to the user, and it's displayed correctly. However, there is a problem: open the Network tab and check the download size. Probably, it's not efficient, especially for a variable font with 5 axes. They can easily go up to 100 KiB or more. That's totally unacceptable.
 ### Axis
@@ -73,6 +70,11 @@ The dowload link will be something like `https://fonts.googleapis.com/css2?famil
 If i want only the `CRSV`as variable i can use the following link: `https://fonts.googleapis.com/css2?family=Recursive:wght,CRSV@400..700,0..1`
 If i want the `MONO` and the `CASL` variables on a fix value: `https://fonts.googleapis.com/css2?family=Recursive:wght,CASL,MONO@400..700,1,1`
 The more variables and ranges you add, the more it costs. Therefore, its advised to stick to strict value if possible.
+
+There is also a very good CDN called [Fontsource](https://fontsource.org/). You can achieve the same thing via a customizable UI.
+- Pick a font
+- Go to the CDN tab
+- Customize the font using the form.
 ### Character ranges
 What languages do you want to support? Different languages can use different characters. Font designers are usually very kind and try to support as many variations as possible. However, if you only want to support, for example, Latin characters, it's a good idea to trim the others off.
 If you open one of the links above from Google Fonts, you will see different sections regarding the available character sets: Latin, Latin-ext, Vietnamese, etc. Copy the one you need from the `src`, and voila, you have a much smaller font size.
@@ -80,7 +82,6 @@ Another technique is using a font tool like [Glyphhanger](https://www.zachleat.c
 ```shell
 glyphhanger http://localhost:4321 --json 
 ```
-
 ...and subset them too...
 ```shell
 glyphhanger http://localhost:4321 --subset=Recursive.woff2
@@ -94,8 +95,8 @@ Both techniques are based on the `unicode-range` CSS property. It defines what c
 ```
 ## Zero cost font
 If you have reached this far, you may be overwhelmed regarding the possibilities. I have good news for you: you don't need to hustle with all of this unless you want to host your font family on your own.
-### Google Fonts
-You can push that entirely to Google Fonts.
+### CDN
+You can push that entirely to a Content Delivery Network. Use [Google Fonts](https://fonts.google.com/) or [FontSource](https://fontsource.org/).
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">  
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
@@ -111,7 +112,7 @@ You can push that entirely to Google Fonts.
 Several font families are already installed on the client. So we can utilize them if we define enough fallbacks.
 ```css
 .desc {
-  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif; **font-weight: normal;
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }
 ```
 Head to https://modernfontstacks.com/ if you want to see more.
@@ -123,6 +124,12 @@ Use the `local()` path within your for definition like so. This will load your s
 }
 ```
 It's also a great optimization. A font may already be installed on the client, so the browser won't download the project-specific font asset. This aspect makes this technique one of the best solutions, in my opinion.
+### Cache
+Last but not least, we should not forget a very powerful feature of the browser. And in our case, it's an easy win, since our font won't just so often. Declaring caching happens through the `Cache-Control` header and it's directives.
+```http
+Cache-Control: public, max-age=2592000
+```
+Here we defined that our font can used for 30 (60×60×24×30) days from the shared cache (CDN for example). Only after this period will consider the browser the asset stale and reach for fresh version.
 ## Conclusion
 As you can see, typography is not easy, and it's certainly a unique profession on its own. We have just covered the web part here. However, I still love to play around with fonts, especially when it's about Mono/Programmic fonts.
 ## References

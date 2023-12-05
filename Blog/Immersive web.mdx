@@ -1,0 +1,127 @@
+---
+tags:
+  - html
+  - blender
+  - 3d
+  - web
+  - webgl
+  - webgpu
+  - threejs
+date: 2023-12-02
+---
+Lately, I've been playing around with 3D elements to refresh my memory on how to implement certain things in Three.js. More importantly, I've been exploring the current state of WebGPU.
+
+import Torus from "../../components/examples/three/Torus.astro"
+import Shader from "../../components/examples/three/Shader.astro"
+import GLTF from "../../components/examples/three/GLTF.astro"
+import { Image } from 'astro:assets';
+
+export const height = 500;
+
+## Story
+
+One or two years ago, I was deeply involved in creating immersive experiences within the browser.
+That's when I discovered [Three.js](https://threejs.org/), and my jaw dropped immediately at the possibilities it offered.
+It didn't take long for me to stumble upon the [Three.js](https://threejs-journey.com/) journey, a course created by Bruno,
+which I quickly fell in love with.
+
+Simultaneously, I delved into learning 3D modeling. A prominent resource for this was the
+[Blender Guru](https://www.youtube.com/@blenderguru). channel. I took a shallow dive into Blender, learning how to create my own
+<a href="#donut-image">donut</a>—a quintessential beginner's project.
+While I can't say it was easy, I thoroughly enjoyed every moment. For a web developer,
+the experience provides a unique feeling of working in another dimension. What made it
+even cooler was the ability to import your own 3D models into Three.js if desired.
+
+- Some of my silly projects can be found on [Github](https://github.com/karesztrk/blender).
+- Also [the previous version of this website](https://github.com/karesztrk/portfolio/tree/8d12881edd6c90892a4827fe8f44b61b707d8a33)
+utilized 3D with a custom shader. Give it a shot if you are interested.
+
+<figure id="donut-image">
+  <Image src="https://raw.githubusercontent.com/karesztrk/blender/master/donut/donut_final_render.avif" alt="A delicious donut" width="1080" height="1080"/>
+  <figcaption>A delicious donut</figcaption>
+</figure>
+
+## WebGL
+
+So, that's the little story of how I got into 3D. Now, let's dive into some code. In my opinion,
+Three.js makes working with WebGL easy and readable. For every shape, there is a dedicated class.
+You simply instantiate it, add a Mesh, and place it onto the scene—voila!
+
+```js
+const geometry = new THREE.TorusGeometry(RADIUS, TUBE, SEGMENTS, ARC);
+```
+
+<figure>
+  <Torus style={{ width: "100%", height: `${height}px` }}/>
+  <figcaption>A Torus shape</figcaption>
+</figure>
+
+### Shader
+
+Later on, I wanted to leverage my newfound skills in my portfolio and bring it to life with something immersive. 
+That's when I came up with the idea to create a unique shader. Shaders are low-level programs for the GPU,
+usually existing in either a 'fragment' (coloring) or a 'vertex' (positioning) shader. Below,
+you can see the original shader that I used on my site. It's made of an icosahedron, but every vertex is
+periodically displaced. This imparts a unique feeling to the shape, making it come alive.
+
+```glsl
+uniform float time;
+uniform float displacement;
+uniform float elevation;
+uniform float speed;
+
+void main() {
+    float factor = abs(sin(time)) * displacement;
+    vec3 offset = normal * factor;
+
+    float waveY = abs(sin(position.y + time * speed)) * elevation;
+    vec3 newPosition = vec3(position + waveY * offset);
+        
+    vec4 modelPosition = modelMatrix * vec4(newPosition, 1.0);
+    vec4 viewPosition = viewMatrix * modelPosition;
+    vec4 projectedPosition = projectionMatrix * viewPosition;
+
+    gl_Position = projectedPosition;
+}
+```
+
+<figure>
+  <Shader style={{ width: "100%", height: `${height}px` }}/>
+  <figcaption>Using a custom shader on a shape</figcaption>
+</figure>
+
+### 3D model
+
+Okay, let's dive into something more fun. As you can see, I often incorporate retro elements into my site.
+This time, let's add a 3D model and render it in Three.js. Once again, Three.js comes to the rescue with a
+dedicated loader for this purpose. As with previous shapes, we aim to add it to the scene, but this time,
+it will be a Space Invader alien floating around.
+
+```js
+const loader = new GLTFLoader().setPath(PATH);
+loader.load(GLTF_FILE, (gltf) => {
+  obj = gltf.scene.children[0];
+  scene.add(obj);
+});
+```
+
+<figure>
+  <GLTF style={{ width: "100%", height: `${height}px` }}/>
+  <figcaption>Loading a 3D model</figcaption>
+</figure>
+
+### WebGPU
+
+At the time of writing this post, [WebGPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) is still behind the flag.
+None of my browsers (Firefox, Brave) are able to run WebGPU-related programs.
+Even though there is already a WebGPU renderer in Three.js, once it's widely supported,
+it will be easy to switch and enjoy the benefits.
+
+If you are using Vite, then you also have to compile to [ESNext](https://github.com/mrdoob/three.js/issues/26626)
+because not all browsers support top-level await.
+
+```js
+import WebGPURenderer from 'three/addons/renderers/webgpu/WebGPURenderer.js';
+const renderer = WebGPURenderer({ canvas });
+```
+
