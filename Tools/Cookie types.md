@@ -6,6 +6,7 @@ tags:
   - http
   - post
   - get
+  - samesite
 ---
 | XSS Request type | Example                  | Normal cookie | Lax | Strict |
 | ------------ | ------------------------ | ------------- | --- | ------ |
