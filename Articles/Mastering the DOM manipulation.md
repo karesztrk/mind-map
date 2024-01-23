@@ -7,4 +7,3 @@ tags:
   - javascript
 ---
 https://phuoc.ng/collection/html-dom/
-
