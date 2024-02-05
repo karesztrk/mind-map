@@ -1,0 +1,95 @@
+---
+tags:
+  - animation
+  - canvas
+  - svg
+  - 3d
+date: 2024-02-15
+---
+
+It's animation time once again! A while back, I had this itch to explore a petite animation library called [Zdog](https://zzz.dog/). In this post, we're diving into its capabilities and having a bit of fun along the way.
+
+Zdog, a compact 3D engine, works wonders by bringing simple vector illustrations into the 3D realm, showcasing them elegantly on either a `<canvas>` or an `<svg>`. According to the author, it's currently in [version 1 beta](https://zzz.dog/#about-zdog-beta). In my opinion, there's no better time than now to play around with something as fantastic as this, especially if you have a little one to share the joy of learning something new.
+
+## Getting Started
+
+Diving into the official guide, the simplicity of Zdog becomes apparent. Much like Three.js, it provides shapes as JavaScript classes, allowing you to effortlessly place them within the scene. Animation follows a familiar pattern, wrapped within a render loop. In just five minutes, you can conjure up a captivating, miniature scene, teeming with animation and interactivity.
+
+## The Zalien 👾
+
+Alright, let's embark on a creative escapade and forge something unique. Given my profound affinity for retro games, I've decided to craft a floating alien in the spirit of my [previous adventures](/blog/immersive-web#3d-model). Allow me to introduce you to "Zalien"!
+
+In the vast playground of Zdog, defining intricate shapes may seem a bit challenging, but fear not! We're taking the scenic route by constructing our extraterrestrial friend from good old boxes. Their positions, strategically placed in a constant, will seamlessly conjure the iconic silhouette reminiscent of the classic Space Invader.
+
+```js
+const getPositions = (): Position[] => {
+const model = `
+  --x-----x--
+  ---x---x---
+  --xxxxxxx--
+  -xx-xxx-xx-
+  xxxxxxxxxxx
+  x-xxxxxxx-x
+  x-x-----x-x
+  ---xx-xx---`;
+
+return model.split("\n").flatMap((line, y) =>
+  line.split("").reduce<Position[]>((acc, curr, x) => {
+	if (curr === "x") {
+	  acc.push({ x, y });
+	}
+	return acc;
+  }, []),
+);
+};
+
+const createVoxel = ({ x, y }: Position) =>
+new Zdog.Box({
+  addTo: scene,
+  stroke: false,
+  color,
+  translate: { x: x - shiftX, y: y - shiftY },
+  backface,
+});
+
+const voxels = getPositions().map(createVoxel);
+```
+
+And we are done with the shape.
+
+## Animation
+
+Now, it's time to breathe life into our extraterrestrial creature! While the docs hint at some utility functions for animation, I've used a simple Math function that promises to give our Zalien a dynamic vibe.
+
+```js
+const animate = () => {
+  const timestamp = Date.now();
+  let y = Math.cos(timestamp * 0.001);
+  scene.updateRenderGraph();
+  scene.translate.set({
+    x: 0,
+    y,
+    z: 0,
+  });
+  requestAnimationFrame(animate);
+};
+```
+
+import Zalien from "@components/examples/zdog/Zalien.astro"
+
+Let's drop it on a `<canvas>`.
+<canvas class="zalien" width="500" height="500" style="width: 100%"></canvas>
+
+## SVG
+
+There's more magic up Zdog's sleeve! We have the ability to render our cosmic creation not just on a `<canvas>` but also on an SVG. Why is this so cool, you ask? Well, let me break it down for you:
+
+1. **Endless Interactivity:** Now, we're not limited to just one avenue of interaction. By rendering our Zalien on an SVG, we open the doors to a plethora of possibilities. Picture this: weaving external animation libraries like Motion.js or unleashing the power of native CSS to breathe life into our creation.
+2. **Intuitive Shape Crafting:** Crafting shapes on an `<svg` becomes an art form in itself. Zdog's API transforms the mundane task of shaping boxes, triangles, and cones into a delightful experience.
+
+And here is the exact same thing on an `<svg>`.
+<svg class="zalien" width="500" height="500" style="width: 100%; border-radius: var(--radius); border: 2px solid var(--color-summary-border);"></svg>
+
+
+## References
+ - https://zzz.dog/
