@@ -8,7 +8,7 @@ tags:
   - brotli
 date: 2023-12-15
 ---
-This week, I worked a bit on web content compression. Traditionally, I have always been involved with Java [Spring](https://spring.io/) Backends. So, it was a bit challenging for me to figure out how to implement compression properly, especially in our case where we don't use the - so popular - Spring Boot. It's a simple [Spring MVC](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html) application.
+️️This week, I worked a bit on web content compression. Traditionally, I have always been involved with Java [Spring](https://spring.io/) Backends. So, it was a bit challenging for me to figure out how to implement compression properly, especially in our case where we don't use the - so popular - Spring Boot. It's a simple [Spring MVC](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html) application.
 ## Background
 Browsers are able to indicate their preferences or capabilities for content through a process called [Content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation#the_accept-encoding_header). Within this negotiation, the browser communicates the types of compression it can handle using the `Accept-Encoding` header. In response, the server can either comply with the request and serve a compressed asset or choose to provide an uncompressed asset. In the former case, it must indicate this choice using the `Content-Encoding` header.
 It's also worth to mention that this task is done usually by a Proxy between the client and the server. This was not possible in our case. So let's dive in.

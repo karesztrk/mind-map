@@ -6,5 +6,5 @@ tags:
   - search
 ---
 
-https://andrew-quinn.me/fzf/
+️https://andrew-quinn.me/fzf/
 
