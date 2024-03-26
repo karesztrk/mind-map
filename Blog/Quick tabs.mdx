@@ -1,0 +1,91 @@
+---
+tags:
+  - html
+  - tab
+  - details
+  - css
+date: 2024-03-26
+---
+This week, I'm revisiting my favorite topic: CSS. I'd like to demonstrate an awesome and easy way to create accessible tabs. The concept really caught my attention when I first encountered it.
+
+## What is the `<details>`?
+
+The `<details>` HTML tag allows developers to implement an accordion-like widget without writing any JavaScript. The beauty lies in the fact that we can leverage the capabilities of the platform without the need for any JavaScript logic. It consists of a summary and a larger description that can be toggled.
+
+```html
+<details>
+  <summary>Who are you?</summary>
+  I used to be an adventurer like you. Then I took an arrow in the knee.
+</details>
+```
+<details>
+  <summary>Who are you?</summary>
+  I used to be an adventurer like you. Then I took an arrow in the knee.
+</details>
+
+## What is the `display: contents`?
+
+Traditionally, every rendered HTML element is displayed using multiple boxes: content, padding, border, and margin. New developers typically realize this when first using `box-sizing: border-box`.
+
+<div style="background: gold; display: flex;">
+  <div style="width: 100%; margin: 1rem; padding: 1rem; border: 1rem solid darkgray; background: blueviolet; color: black">
+    <div style="width: 100%; background: white">I'm wrapped in deep</div>
+  </div>
+</div>
+
+There is a less widely none CSS attribute called: `display: contents`. It gives us a backdoor to render only the very "inner part" (content) of the element.
+
+<div style="background: gold; display: flex;">
+  <div style="display: contents; width: 100%; margin: 1rem; padding: 1rem; border: 1rem solid darkgray; background: blueviolet; color: black">
+    <div style="width: 100%; background: white">I'm free</div>
+  </div>
+</div>
+
+Why is it useful? For example, we can align various content of a parent next to each other without using Flex or Grid, while also keeping the markup intact.
+
+## Implementing a tab widget
+
+"That's cool," you may say, "but what's the point?" Let's dig deeper!
+
+Recently, I found a fascinating use-case of the `<details>` element that leverages the benefits of display: contents. By default, the Flow layout treats all children separately, and you have to use another layout algorithm to align them. However, with a little bit of CSS magic, we can allow the children to interact with each other. This means we can use the Flexbox algorithm to align and order their content without compromising the integrity of the markup.
+
+### Demo 
+
+You can see a working example below.
+
+import DetailsTabs from "@components/DetailsTabs.astro";
+
+<DetailsTabs>
+  <details open role="tab" aria-selected="true" aria-label="The detail tag">
+    <summary>The `details` tag</summary>
+    <div>
+      An awesome tool to create an accordion 🪗 that can be toggled.
+    </div>
+  </details>
+  <details role="tab" aria-selected="false" aria-label="Where contents can help?">
+    <summary>Where `contents` can help?</summary>
+    <div>
+      Remove the extra layers (margin, padding, etc.) around the content. It helps to let the children interact with each other ✨.
+    </div>
+  </details>
+</DetailsTabs>
+
+## Alternatives
+
+Nearly all component libraries offer a tab-like interface, but not all of them in a way that's fully supported by the platform. Most either reimplement it in JavaScript or rely on third-party libraries that do the same thing.
+
+Web Components provide another way to leverage the platform. You can use libraries like [Shoelace](https://shoelace.style/components/tab/), for example.
+
+So, what's the benefit of this solution, you may ask? Well, until it's [natively supported](https://open-ui.org/components/tabs.research/), you can enjoy the following:
+
+- Semantic HTML support
+- Encapsulation
+- Built-in accessibility (a11y) features
+
+## References
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/display#contents
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+- https://codepen.io/RYJASM/pen/eYoYeRg
+- https://bitsofco.de/how-display-contents-works/
+- https://open-ui.org/
