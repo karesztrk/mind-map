@@ -27,19 +27,19 @@ The `<details>` HTML tag allows developers to implement an accordion-like widget
 
 Traditionally, every rendered HTML element is displayed using multiple boxes: content, padding, border, and margin. New developers typically realize this when first using `box-sizing: border-box`.
 
-<div style="background: gold; display: flex;">
+<code style="background: gold; display: flex;">
   <div style="width: 100%; margin: 1rem; padding: 1rem; border: 1rem solid darkgray; background: blueviolet; color: black">
     <div style="width: 100%; background: white">I'm wrapped in deep</div>
   </div>
-</div>
+</code>
 
 There is a less widely none CSS attribute called: `display: contents`. It gives us a backdoor to render only the very "inner part" (content) of the element.
 
-<div style="background: gold; display: flex;">
+<code style="background: gold; display: flex;">
   <div style="display: contents; width: 100%; margin: 1rem; padding: 1rem; border: 1rem solid darkgray; background: blueviolet; color: black">
     <div style="width: 100%; background: white">I'm free</div>
   </div>
-</div>
+</code>
 
 Why is it useful? For example, we can align various content of a parent next to each other without using Flex or Grid, while also keeping the markup intact.
 
