@@ -28,7 +28,7 @@ Say hello world!
 ```
 ### Presenter mode
 You know, when I first mapped out my presentation, I had this exact thought. I mean, great presenters often have their own notes and layouts, right? It's all about staying organized and on point during the talk. With sli.dev, not only do we get those slick Markdown slides, but we also get our own little slice of presenter paradise. Just fire up `http://localhost:3030/presenter`! You've got your notes and layout right there, ready to keep you in the zone while you work your magic onstage.
-![Sli.dev presentation mode exmaple. Slides on the left, notes on the right.](https://sli.dev/screenshots/presenter-mode.png "Presenter mode")
+![Sli.dev presentation mode exmaple. Slides on the left, notes on the right.](./Images/slidev_presenter.webp "Presenter mode")
 ### Diagrams
 Declarative diagram drawing? Count me in! And let me tell you about [Mermaid](https://mermaid-js.github.io/mermaid). Sure, I might not be a Picasso when it comes to drawing, but with Mermaid, I don't need to be! I recently dipped my toes into creating a flowchart diagram. I could tweak and refine my diagrams right there in my Markdown, no need for any fancy external applications. Mermaid's got that raw power to turn my plain text into polished, professional-looking diagrams.
 ```mermaid
