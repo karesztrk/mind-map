@@ -7,5 +7,4 @@ tags:
   - heading
   - title
 ---
-https://notadesigner.io/p/typefaces-headingshttps://notadesigner.io/p/typefaces-headings
-
+https://notadesigner.io/p/typefaces-headings

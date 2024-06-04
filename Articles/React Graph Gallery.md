@@ -8,5 +8,5 @@ tags:
   - chart
 ---
 
-https://www.react-graph-gallery.com/ö
+https://www.react-graph-gallery.com/
 
