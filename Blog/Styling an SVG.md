@@ -176,6 +176,7 @@ const href = `${src}#${reference || getFileName(src)}`;
 </svg>
 
 ```
-
+Grab it on [Github](https://github.com/karesztrk/astro-svg-icon).
 ## Reference
 https://kurtextrem.de/posts/svg-in-js
+https://github.com/karesztrk/astro-svg-icon

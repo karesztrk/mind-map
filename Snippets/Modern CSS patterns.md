@@ -33,3 +33,18 @@ tags:
 	grid-template-columns: repeat(auto-fit, minmax(min(100%, 50px), 1fr));
 }
 ```
+
+## Flex text wrapping
+
+```css
+.flex-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.flex-group > * {
+	min-width: fit-content;
+	flex: 1;
+}
+```
