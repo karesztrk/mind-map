@@ -1,5 +1,6 @@
 ---
-tags: html,
+tags:
+  - html
   - ui
   - ux
   - grid
