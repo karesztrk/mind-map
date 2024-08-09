@@ -8,4 +8,4 @@ tags:
   - "#clip"
   - image
 ---
-https://expensive.toys/blog/black-pixel-masking
+fttps://expensive.toys/blog/black-pixel-masking
