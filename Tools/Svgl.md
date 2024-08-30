@@ -2,5 +2,6 @@
 tags:
   - svg
   - collection
+  - icon
 ---
-https://techicons.dev/
+https://svgl.app/
