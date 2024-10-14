@@ -83,7 +83,7 @@ Let's see how it works.
 ```css
 @view-transition {
   navigation: auto; 
-}
+}d
 ```
 
 And we are done 🤠! Well, we can do more, but that's the gist of it. The browser will capture screenshots (literally) between the two pages. With the rule above, you can opt-in and apply fade transitions between pages.
