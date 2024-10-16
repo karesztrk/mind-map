@@ -33,7 +33,7 @@ Here is the repo - https://github.com/karesztrk/moonboard/tree/master/src-tauri/
 
 At this point, I hit a roadblock.
 
-> "How can I create a user-friendly GUI?"
+> How can I create a user-friendly GUI?
 
 Initially, I planned to go with a TUI (Text User Interface)—because, let's be honest, I'm a huge fan of terminal-based applications. But then, I had a lightbulb moment! Why not give [Tauri](https://tauri.app/) a shot?!
 

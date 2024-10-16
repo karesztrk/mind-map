@@ -1,4 +1,6 @@
 ---
+id: SVG outlines
+aliases: []
 tags:
   - svg
   - outline
@@ -8,4 +10,5 @@ tags:
   - clone
   - contour
 ---
-ttps://www.jointjs.com/blog/svg-outline
+
+https://www.jointjs.com/blog/svg-outline
