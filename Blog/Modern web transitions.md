@@ -217,7 +217,7 @@ In this chapter, I'd like to create a fancy Star Wars-like transition effect, wh
 
 @keyframes scene-transition {
   to {
-    --transition-radius: 105%;
+    --transition-percentage: 105%;
   }
 }
 
