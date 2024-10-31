@@ -274,6 +274,12 @@ Google is attempting to assist with the new [Speculation API](https://developer.
 }
 </script>
 ```
+## Browser support
+
+<baseline-status featureId="transition-behavior"></baseline-status>
+
+<baseline-status featureId="cross-document-view-transitions"></baseline-status>
+
 ## Reference
 - https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API
 - https://jakearchibald.com/2024/view-transitions-handling-aspect-ratio-changes/
