@@ -5,6 +5,9 @@ tags:
   - transition
   - animation
 date: 2024-06-21
+features:
+  - transition-behavior
+  - cross-document-view-transitions
 ---
 By now, you probably know that I'm obsessed with CSS. These days, CSS is improving rapidly, and it's hard to keep up with every new feature. In this post, I'll provide a basic overview of the new transitions that can make your MPA (Multi-Page Application) site feel like a native application.
 ## Browser support
@@ -274,11 +277,6 @@ Google is attempting to assist with the new [Speculation API](https://developer.
 }
 </script>
 ```
-## Browser support
-
-<baseline-status featureId="transition-behavior"></baseline-status>
-
-<baseline-status featureId="cross-document-view-transitions"></baseline-status>
 
 ## Reference
 - https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API

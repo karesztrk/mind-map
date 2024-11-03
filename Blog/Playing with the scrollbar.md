@@ -3,6 +3,8 @@ tags:
   - scroll
   - animation
 date: 2024-10-31
+features: 
+  - scroll-driven-animations
 ---
 I recently discovered a new toy called scroll-driven animations. Since it’s a fresh feature currently only available in Chrome, I thought it would be the perfect time to dive into something new in modern CSS. I’d heard about it several times in [newsletters](https://codepen.io/spark) and [podcasts](https://thecsspodcast.libsyn.com/090-scroll-driven-animations), but until now, I didn’t find it particularly appealing. Turns out, I was so wrong… so let’s dive in!
 
@@ -48,10 +50,6 @@ There are a few caveats when enabling scroll-driven animations. The first is bro
 The second is the declaration order of the `animation-timeline`.
 
 > You need to declare `animation-timeline` after declaring any `animation` shorthand for it to take effect. Because currently the `animation` resets a previously-declared `animation-timeline`.
-
-## Browser support
-
-<baseline-status featureId="scroll-driven-animations"></baseline-status>
 
 ## Examples
 Over the past few days, I’ve created several examples, which you can check out on [CodePen](https://codepen.io/collection/ZMgdmv). Alternatively, explore my site to see them in action ✨.
