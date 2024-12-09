@@ -48,3 +48,12 @@ tags:
 	flex: 1;
 }
 ```
+
+### Scroll container
+```css
+@mixin scroll-container {
+	contain: size; /* The element and its contents independent from the rest of the document tree. */
+	overflow-y: auto; /* Show vertical scrollbar */
+	overscroll-behavior-x: contain; /* block parent horizontal scrolbar */
+}
+```
