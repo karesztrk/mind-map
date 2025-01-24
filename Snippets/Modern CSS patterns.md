@@ -49,11 +49,64 @@ tags:
 }
 ```
 
-### Scroll container
+## Scroll container
 ```css
 @mixin scroll-container {
 	contain: size; /* The element and its contents independent from the rest of the document tree. */
 	overflow-y: auto; /* Show vertical scrollbar */
 	overscroll-behavior-x: contain; /* block parent horizontal scrolbar */
 }
+```
+
+## Transition animation for `<dialog>` and `[popover]`
+```css
+/* enable transitions, allow-discrete, define timing */
+[popover], dialog, ::backdrop {
+  transition: display 1s allow-discrete, overlay 1s allow-discrete, opacity 1s;
+  opacity: 0;
+}
+
+/* ON STAGE */
+:popover-open,
+:popover-open::backdrop,
+[open],
+[open]::backdrop {
+  opacity: 1;
+}bbb
+
+/* OFF STAGE */
+/* starting-style for pre-positioning (enter stage from here) */
+@starting-style {
+  :popover-open,
+  :popover-open::backdrop,
+  [open],
+  [open]::backdrop {
+    opacity: 0;
+  }
+}
+```
+
+## Grid for list
+
+```css
+ul {
+  inline-size: min(100%, 500px);
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: contents;
+
+    @supports (grid-template-columns: subgrid) {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: subgrid;
+    }
+  }
+}
+
 ```

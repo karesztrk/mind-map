@@ -93,6 +93,8 @@ Both techniques are based on the `unicode-range` CSS property. It defines what c
   unicode-range: U+0025-00FF; /* code point range */
 }
 ```
+
+Update: Another great alternative is [Wakamai Fondue](https://wakamaifondue.com/beta/).
 ## Zero cost font
 If you have reached this far, you may be overwhelmed regarding the possibilities. I have good news for you: you don't need to hustle with all of this unless you want to host your font family on your own.
 ### CDN
