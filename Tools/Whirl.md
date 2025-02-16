@@ -5,4 +5,4 @@ tags:
   - spinner
   - loader
 ---
-ttps://whirl.netlify.app/
+https://whirl.netlify.app/
