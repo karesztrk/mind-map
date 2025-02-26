@@ -110,3 +110,61 @@ ul {
 }
 
 ```
+
+## Centering
+### Absolute
+
+```css
+.outer-box {
+  position: relative;
+}
+/* Transform trick */
+.inner-box-transform {
+  position: absolute;
+  left: 50%;
+  top: 50;
+  transform: -50% -50%;
+}
+
+/* Using margin */
+.inner-box-margin {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+```
+
+### Flex
+```css
+.outer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner-box {
+  /* margin: auto; */
+}
+```
+
+### Grid
+```css
+.outer-box {
+  display: flex;
+  place-items: center;
+}
+.inner-box {
+  /* place-self: center; */
+  /* margin: auto; */
+}
+```
+
+### w/o display
+```css
+.outer-box {
+  align-content: center;
+  justify-items: center;
+}
+.inner-box {
+  /* margin: auto; */
+}
+```

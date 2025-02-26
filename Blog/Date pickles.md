@@ -77,10 +77,24 @@ I also had to reconsider and extend the component’s accessibility, but I’m q
 
 Unfortunately, I can’t share the source code, but I’ll post some pictures as soon as possible. So, keep an eye on this blog post!
 
+## Update (2025-02-26)
+I'm finally ready with a full-fledged solution ✨. It includes:
+
+- ✅ Single date & time selection mode
+- ✅ Range selection mode
+- ✅ Presets the pick a range fast
+- ✅ Full a11y ⌨ support
+
+Under the hood, I'm using `date-fns` and `floating-ui`. Credit goes to the maintainers of these libraries for making date and floating window management a breeze.
+
+![Demonstrating the date picker functions](./Images/date_pickles.gif "Date pickles")
+
 ## References
 - https://reactdatepicker.com/
 - https://shahabyazdi.github.io/react-multi-date-picker/
 - https://air-datepicker.com/
+- https://github.com/date-fns/date-fns
+- https://github.com/floating-ui/floating-ui
 
 
 
