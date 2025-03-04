@@ -89,6 +89,7 @@ Under the hood, I'm using `date-fns` and `floating-ui`. Credit goes to the maint
 
 ![Demonstrating the date picker functions](./Images/date_pickles.gif "Date pickles")
 
+You can also find a skeleton of it in my [GitHub project](https://github.com/karesztrk/date-pickle). It's an ad-hoc rewrite in [Lit](https://lit.dev/). Please keep in mind that it doesn't follow any web component best practices yet. Eventually, I want to extend it from my own [base class](https://github.com/karesztrk/webcomponent-base).
 ## References
 - https://reactdatepicker.com/
 - https://shahabyazdi.github.io/react-multi-date-picker/
