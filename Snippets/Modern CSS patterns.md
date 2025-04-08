@@ -168,3 +168,27 @@ ul {
   /* margin: auto; */
 }
 ```
+
+## Number input
+### Remove arrows
+
+```html
+<input type="number" inputmode="numeric">
+```
+
+```css
+/* Chromium & Safari */
+input[type=number]::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+```
+### w/o CSS
+
+```html
+<input type="text" inputmode="numeric" pattern="[0-9]+">
+```

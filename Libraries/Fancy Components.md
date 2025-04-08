@@ -4,9 +4,8 @@ tags:
   - animation
   - 3d
   - effect
-  - parallax
   - gradient
   - react
 ---
-https://ui.aceternity.com/components
+https://github.com/danielpetho/fancy
 

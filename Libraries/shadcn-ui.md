@@ -5,6 +5,7 @@ tags:
   - component
   - library
   - tailwind
+  - react
 ---
 https://github.com/shadcn/ui
 
