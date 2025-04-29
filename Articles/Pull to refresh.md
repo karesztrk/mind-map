@@ -10,5 +10,4 @@ tags:
   - fresh
   - animation
 ---
-
 https://nerdy.dev/pull-to-refresh-prototype-with-scroll-snap-and-scroll-driven-animation
