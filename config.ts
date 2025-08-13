@@ -22,6 +22,5 @@ export const collections = {
   Codepens: baseSchema,
   Libraries: baseSchema,
   Snippets: baseSchema,
-  Stack: baseSchema,
   Tools: baseSchema,
 };
