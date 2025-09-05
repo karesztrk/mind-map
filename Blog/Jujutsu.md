@@ -251,7 +251,9 @@ Now, how beautiful is this, friends?
 How many times have you screwed something up in Git, which eventually resulted in a `git reset`? Well, undoing any operation—not just commits—in JJ is a single command: `jj undo`.
 
 In JJ, every single command is added to the ["operation log"](https://jj-vcs.github.io/jj/latest/operation-log/). Each operation object contains a snapshot of how the repository looked at the end of the operation. `jj [op] undo` will roll back the repository to the previous state.  
-Fun fact: you can undo the undo operation by executing it twice.
+~~Fun fact: you can undo the undo operation by executing it twice.~~
+
+[v0.33.0](https://github.com/jj-vcs/jj/releases/tag/v0.33.0) changes: `jj undo` is now sequential. This means that repeatedly undoes actions in the operation log. Essentially it goes back in time further and further.
 
 Do not confuse `undo` with `abandon`, which abandons a revision—and is therefore the equivalent of `git reset --hard`.
 ## Git co-location

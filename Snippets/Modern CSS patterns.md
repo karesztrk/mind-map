@@ -72,7 +72,7 @@ tags:
 [open],
 [open]::backdrop {
   opacity: 1;
-}bbb
+}
 
 /* OFF STAGE */
 /* starting-style for pre-positioning (enter stage from here) */
