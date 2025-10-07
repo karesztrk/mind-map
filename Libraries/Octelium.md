@@ -10,6 +10,7 @@ tags:
   - homelab
   - wireguard
   - mcp
+  - reverse-proxy
 ---
 https://github.com/octelium/octelium
 

@@ -98,6 +98,7 @@ ul {
   padding: 0;
 
   li {
+    /* Careful with this: it removes the content from the a11y tree */
     display: contents;
 
     @supports (grid-template-columns: subgrid) {
@@ -191,4 +192,21 @@ input[type='number'] {
 
 ```html
 <input type="text" inputmode="numeric" pattern="[0-9]+">
+```
+
+### Modal backdrop scrolling
+
+```css
+/**
+ * Prevent background scrolling with a modal dialog is open
+ */
+html:has(dialog[open]:modal) {
+	overflow: hidden;
+}
+/**
+ * Hold space for scrollbar to prevent jumping on pages.
+ */
+html {
+	scrollbar-gutter: stable;
+}
 ```
