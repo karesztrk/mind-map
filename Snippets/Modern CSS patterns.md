@@ -210,3 +210,104 @@ html {
 	scrollbar-gutter: stable;
 }
 ```
+
+## Colors
+
+## New syntax
+
+```css
+/* full red */
+.red {
+  color: rgb(255 0 0);
+}
+
+/* red, 50% opacity */
+.red-50 {
+  color: rgb(255 0 0 / 0.5);
+}
+
+.hsl-red-50 {
+  color: hsl(0 100% 50% / 0.5);
+}
+```
+
+### Relative colors
+
+```css
+.toast {
+  --toast-color: #222; /* Base color */
+
+   color: hsl(from var(--toast-color) h s 15%); /* Darker text */
+  border: 2px solid var(--toast-color);
+  background: hsl(from var(--toast-color) h s 90%); /* Lighter background */
+  box-shadow: 0 12px 12px -8px hsl(from var(--toast-color) h s l / 0.325); /* Lowered opacity shadow */
+}
+```
+
+## Forced colors
+
+### Adjust the button colors
+```css
+@media (forced-colors: active) {
+	button[aria-pressed='true'] {
+		forced-color-adjust: none; /* opt ouf from forced colors */
+		background-color: Highlight; /* use system color for the bg */
+		color: HighlightText; /* use system color for the button txt */
+	}
+}
+```
+
+## Linear
+
+### Fallback for older browsers
+
+```css
+html {
+  --spring-smooth: cubic-bezier(...);
+  --spring-smooth-time: 1000ms;
+  @supports (animation-timing-function: linear(0, 1)) {
+    /* prettier-ignore */
+    --spring-smooth: linear(/* Lots of values here */);
+  }
+}
+```
+
+## Interpolation
+
+### Translate filler
+
+Based on [Josh Comeau](https://www.joshwcomeau.com/) `normalize` / `lerp` function. [Whimsical Animations course](https://courses.joshwcomeau.com/wham).
+
+```css
+ .filler {
+    --transition-duration: 200ms;
+    --current-scale-min: 0;
+    --current-scale-max: 100;
+    --new-scale-min: 5;
+    --new-scale-max: 95;
+    
+    --standard-normalization: calc((var(--fill, 0) - var(--current-scale-min)) / (var(--current-scale-max) - var(--current-scale-min)));
+    --normalized: calc((var(--new-scale-max) - var(--new-scale-min)) * var(--standard-normalization) + var(--new-scale-min));
+
+     fill: hsl(350deg 100% 50%);
+     translate: 0 calc(100% - calc(var(--normalized)) * 1%);
+     transition: translate var(--transition-duration) ease;
+}
+
+.expo-filler {
+    --transition-duration: 200ms;
+    --current-scale-min: 0;
+    --current-scale-max: 100;
+    --new-scale-min: 0;
+    --new-scale-max: 85;
+    --exponent: 0.5;
+    
+    --standard-normalization: calc((var(--fill, 0) - var(--current-scale-min)) / (var(--current-scale-max) - var(--current-scale-min)));
+    --exponential-output: pow(var(--standard-normalization), var(--exponent));
+    --normalized: calc(var(--new-scale-min) + (var(--new-scale-max) - var(--new-scale-min)) * var(--exponential-output));
+
+     fill: hsl(350deg 100% 50%);
+     translate: 0 calc(100% - calc(var(--normalized)) * 1%);
+     transition: translate var(--transition-duration) ease;
+  }
+```
