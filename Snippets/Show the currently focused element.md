@@ -1,4 +1,9 @@
-s```js
+---
+tags:
+  - js
+  - focus
+---
+```js
 // Listen for focus changes on any element
 document.addEventListener('focusin', (event) => {
   console.log('Currently focused element:', event.target);
@@ -7,3 +12,4 @@ document.addEventListener('focusin', (event) => {
   console.log('Class:', event.target.className);
 });
 ```
+
