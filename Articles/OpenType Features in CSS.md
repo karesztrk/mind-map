@@ -6,5 +6,6 @@ tags:
   - opentype
   - feature
   - demo
+  - typography
 ---
-https://sparanoid.com/lab/opentype-features/
+<https://sparanoid.com/lab/opentype-features/>

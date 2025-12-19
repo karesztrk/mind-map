@@ -1,10 +1,10 @@
 ---
 tags:
   - font
+  - typography
   - opentype
-  - ge
   - truetype
   - feature
-  - l
 ---
-https://wakamaifondue.com/beta/
+<https://wakamaifondue.com/beta/>
+
