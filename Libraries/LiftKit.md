@@ -4,6 +4,7 @@ tags:
   - javascript
   - react
   - component
+  - shadcn
 ---
-https://github.com/Chainlift/liftkit
 
+https://github.com/Chainlift/liftkit

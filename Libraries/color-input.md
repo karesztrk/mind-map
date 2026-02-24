@@ -10,5 +10,4 @@ tags:
   - color-input
 ---
 
-https://codepen.io/argyleink/pen/dPGBYZg
-[Github lib](../Libraries/color-input.md).
+https://github.com/argyleink/css-color-component

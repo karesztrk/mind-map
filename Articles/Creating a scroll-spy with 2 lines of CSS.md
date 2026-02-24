@@ -1,9 +1,9 @@
 ---
 tags:
   - css
-  - cube
-  - 3d
-  - transform
-  - perspective
+  - scroll
+  - spy
 ---
-https://una.im/scroll-target-group/
+
+https://una.im/scroll-target-group
+

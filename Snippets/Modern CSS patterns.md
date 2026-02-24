@@ -2,19 +2,24 @@
 tags:
   - css
 ---
+
 ## Wrapper
+
 ```css
 .wrapper-old {
-	padding: 0 2rem;
-	max-width: 1160px;
-	margin-inline: auto;
+  padding: 0 2rem;
+  max-width: 1160px;
+  margin-inline: auto;
 }
 
 .wrapper-new {
-	--_content-max-width: 1160px;
-	--_padding-inline: 2rem;
-	width: min(var(--_content-max-width), 100% - calc(var(--_padding-inline) * 2));
-	margin-inline: auto;
+  --_content-max-width: 1160px;
+  --_padding-inline: 2rem;
+  width: min(
+    var(--_content-max-width),
+    100% - calc(var(--_padding-inline) * 2)
+  );
+  margin-inline: auto;
 }
 ```
 
@@ -22,15 +27,16 @@ tags:
 
 ```css
 .flow > * + * {
-	margin-top: 1em;
+  margin-top: 1em;
 }
 ```
 
 ## Fluid grid
+
 ```css
 .grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 50px), 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 50px), 1fr));
 }
 ```
 
@@ -38,31 +44,38 @@ tags:
 
 ```css
 .flex-group {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .flex-group > * {
-	min-width: fit-content;
-	flex: 1;
+  min-width: fit-content;
+  flex: 1;
 }
 ```
 
 ## Scroll container
+
 ```css
 @mixin scroll-container {
-	contain: size; /* The element and its contents independent from the rest of the document tree. */
-	overflow-y: auto; /* Show vertical scrollbar */
-	overscroll-behavior-x: contain; /* block parent horizontal scrolbar */
+  contain: size; /* The element and its contents independent from the rest of the document tree. */
+  overflow-y: auto; /* Show vertical scrollbar */
+  overscroll-behavior-x: contain; /* block parent horizontal scrolbar */
 }
 ```
 
 ## Transition animation for `<dialog>` and `[popover]`
+
 ```css
 /* enable transitions, allow-discrete, define timing */
-[popover], dialog, ::backdrop {
-  transition: display 1s allow-discrete, overlay 1s allow-discrete, opacity 1s;
+[popover],
+dialog,
+::backdrop {
+  transition:
+    display 1s allow-discrete,
+    overlay 1s allow-discrete,
+    opacity 1s;
   opacity: 0;
 }
 
@@ -109,10 +122,10 @@ ul {
     }
   }
 }
-
 ```
 
 ## Centering
+
 ### Absolute
 
 ```css
@@ -136,6 +149,7 @@ ul {
 ```
 
 ### Flex
+
 ```css
 .outer-box {
   display: flex;
@@ -148,6 +162,7 @@ ul {
 ```
 
 ### Grid
+
 ```css
 .outer-box {
   display: flex;
@@ -160,6 +175,7 @@ ul {
 ```
 
 ### w/o display
+
 ```css
 .outer-box {
   align-content: center;
@@ -171,27 +187,29 @@ ul {
 ```
 
 ## Number input
+
 ### Remove arrows
 
 ```html
-<input type="number" inputmode="numeric">
+<input type="number" inputmode="numeric" />
 ```
 
 ```css
 /* Chromium & Safari */
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-inner-spin-button {
   display: none;
 }
 
 /* Firefox */
-input[type='number'] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 ```
+
 ### w/o CSS
 
 ```html
-<input type="text" inputmode="numeric" pattern="[0-9]+">
+<input type="text" inputmode="numeric" pattern="[0-9]+" />
 ```
 
 ### Modal backdrop scrolling
@@ -201,13 +219,13 @@ input[type='number'] {
  * Prevent background scrolling with a modal dialog is open
  */
 html:has(dialog[open]:modal) {
-	overflow: hidden;
+  overflow: hidden;
 }
 /**
  * Hold space for scrollbar to prevent jumping on pages.
  */
 html {
-	scrollbar-gutter: stable;
+  scrollbar-gutter: stable;
 }
 ```
 
@@ -237,7 +255,7 @@ html {
 .toast {
   --toast-color: #222; /* Base color */
 
-   color: hsl(from var(--toast-color) h s 15%); /* Darker text */
+  color: hsl(from var(--toast-color) h s 15%); /* Darker text */
   border: 2px solid var(--toast-color);
   background: hsl(from var(--toast-color) h s 90%); /* Lighter background */
   box-shadow: 0 12px 12px -8px hsl(from var(--toast-color) h s l / 0.325); /* Lowered opacity shadow */
@@ -247,13 +265,14 @@ html {
 ## Forced colors
 
 ### Adjust the button colors
+
 ```css
 @media (forced-colors: active) {
-	button[aria-pressed='true'] {
-		forced-color-adjust: none; /* opt ouf from forced colors */
-		background-color: Highlight; /* use system color for the bg */
-		color: HighlightText; /* use system color for the button txt */
-	}
+  button[aria-pressed="true"] {
+    forced-color-adjust: none; /* opt ouf from forced colors */
+    background-color: Highlight; /* use system color for the bg */
+    color: HighlightText; /* use system color for the button txt */
+  }
 }
 ```
 
@@ -279,35 +298,61 @@ html {
 Based on [Josh Comeau](https://www.joshwcomeau.com/) `normalize` / `lerp` function. [Whimsical Animations course](https://courses.joshwcomeau.com/wham).
 
 ```css
- .filler {
-    --transition-duration: 200ms;
-    --current-scale-min: 0;
-    --current-scale-max: 100;
-    --new-scale-min: 5;
-    --new-scale-max: 95;
-    
-    --standard-normalization: calc((var(--fill, 0) - var(--current-scale-min)) / (var(--current-scale-max) - var(--current-scale-min)));
-    --normalized: calc((var(--new-scale-max) - var(--new-scale-min)) * var(--standard-normalization) + var(--new-scale-min));
+.filler {
+  --transition-duration: 200ms;
+  --current-scale-min: 0;
+  --current-scale-max: 100;
+  --new-scale-min: 5;
+  --new-scale-max: 95;
 
-     fill: hsl(350deg 100% 50%);
-     translate: 0 calc(100% - calc(var(--normalized)) * 1%);
-     transition: translate var(--transition-duration) ease;
+  --standard-normalization: calc(
+    (var(--fill, 0) - var(--current-scale-min)) /
+      (var(--current-scale-max) - var(--current-scale-min))
+  );
+  --normalized: calc(
+    (var(--new-scale-max) - var(--new-scale-min)) *
+      var(--standard-normalization) + var(--new-scale-min)
+  );
+
+  fill: hsl(350deg 100% 50%);
+  translate: 0 calc(100% - calc(var(--normalized)) * 1%);
+  transition: translate var(--transition-duration) ease;
 }
 
 .expo-filler {
-    --transition-duration: 200ms;
-    --current-scale-min: 0;
-    --current-scale-max: 100;
-    --new-scale-min: 0;
-    --new-scale-max: 85;
-    --exponent: 0.5;
-    
-    --standard-normalization: calc((var(--fill, 0) - var(--current-scale-min)) / (var(--current-scale-max) - var(--current-scale-min)));
-    --exponential-output: pow(var(--standard-normalization), var(--exponent));
-    --normalized: calc(var(--new-scale-min) + (var(--new-scale-max) - var(--new-scale-min)) * var(--exponential-output));
+  --transition-duration: 200ms;
+  --current-scale-min: 0;
+  --current-scale-max: 100;
+  --new-scale-min: 0;
+  --new-scale-max: 85;
+  --exponent: 0.5;
 
-     fill: hsl(350deg 100% 50%);
-     translate: 0 calc(100% - calc(var(--normalized)) * 1%);
-     transition: translate var(--transition-duration) ease;
-  }
+  --standard-normalization: calc(
+    (var(--fill, 0) - var(--current-scale-min)) /
+      (var(--current-scale-max) - var(--current-scale-min))
+  );
+  --exponential-output: pow(var(--standard-normalization), var(--exponent));
+  --normalized: calc(
+    var(--new-scale-min) + (var(--new-scale-max) - var(--new-scale-min)) *
+      var(--exponential-output)
+  );
+
+  fill: hsl(350deg 100% 50%);
+  translate: 0 calc(100% - calc(var(--normalized)) * 1%);
+  transition: translate var(--transition-duration) ease;
+}
+```
+
+## Scroll spy
+
+See Una's [blog](https://una.im/scroll-target-group/).
+
+```css
+.parent {
+  scroll-target-group: auto;
+}
+
+:target-current {
+  /* styles for active anchor */
+}
 ```
