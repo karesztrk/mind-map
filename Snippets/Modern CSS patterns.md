@@ -146,6 +146,13 @@ ul {
   inset: 0;
   margin: auto;
 }
+
+/* Using horizontal & vertical alignment */
+.inner-box-margin {
+  position: absolute;
+  place-self: center;
+  inset: 0;
+}
 ```
 
 ### Flex
