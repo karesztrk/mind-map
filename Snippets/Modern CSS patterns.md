@@ -40,6 +40,28 @@ tags:
 }
 ```
 
+### Fluid grid /w breakpoint switcher
+
+```css
+.grid-auto-switcher {
+  /* settings, you can change these to whatever you need */
+  --min-column-size: 200px;
+  --column-count: 3;
+  --gap: 1rem;
+
+  --breakpoint: calc(var(--min-column-size) * var(--column-count));
+  --column-size: calc((100% / var(--column-count)) - var(--gap));
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      min(100%, max(var(--column-size), (100% - var(--breakpoint)) * -999)),
+      1fr
+    )
+  );
+}
+```
+
 ## Flex text wrapping
 
 ```css
@@ -57,12 +79,31 @@ tags:
 
 ## Scroll container
 
+### Horizontal
+
 ```css
 @mixin scroll-container {
   contain: size; /* The element and its contents independent from the rest of the document tree. */
   overflow-y: auto; /* Show vertical scrollbar */
   overscroll-behavior-x: contain; /* block parent horizontal scrolbar */
 }
+```
+
+### Vertical
+
+```css
+.overflow-scroller {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 300px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+
+  /* select the children */
+  & > * {
+    scroll-snap-align: center;
+  }
 ```
 
 ## Transition animation for `<dialog>` and `[popover]`
@@ -125,6 +166,8 @@ ul {
 ```
 
 ## Centering
+
+https://css-generators.com/center/
 
 ### Absolute
 

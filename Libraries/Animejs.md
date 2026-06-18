@@ -7,5 +7,5 @@ tags:
   - waapi
   - css
 ---
-https://github.com/juliangarnier/anime
 
+https://github.com/juliangarnier/anime

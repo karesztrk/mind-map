@@ -5,4 +5,4 @@ tags:
   - griddy
 ---
 
-<https://sustyicons.com/>
+https://griddyicons.com/
