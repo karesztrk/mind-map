@@ -26,9 +26,12 @@ Thanks to many clever people - who I follow -, I was able to escape from this vi
 - [Chris Ferdinandi](https://gomakethings.com/)
 - [Kevin Powell](https://www.kevinpowell.co/)
 - [Andy Bell](https://bell.bz/)
+- [Dylan Beattie](https://dylanbeattie.net/)
 - and this time [Andrew Kelley](https://andrewkelley.me/) (creator of the Zig language and the president of the [Zig Software Foundation](https://ziglang.org/zsf/))
 
 Andrew's [recent talk](https://youtu.be/iqddnwKF8HQ?si=wvtHY5zj_t1zSZYK) was fascinating. I enjoyed that such a clever person shares many of my thoughts. This encouraged me to learn Zig even more. And how did I start? I have became a [Zigling](https://codeberg.org/karesztrk/ziglings), I do my best with the exercises until I tinker enough to start a side-project (aka. not being a noob).
+
+Check Dylan's [recent talk](https://youtu.be/xunx7VvlOgs?si=yAQ6ApyPBALCV13r) from NDC conference if you are curious why the majority of people use AI and what will be the consequences.
 
 ## Fibonacci
 
