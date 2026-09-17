@@ -6,4 +6,4 @@ tags:
   - component
 ---
 
-https://github.com/getelena/elena
+https://github.com/arielsalminen/elena

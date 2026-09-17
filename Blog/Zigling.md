@@ -85,7 +85,7 @@ I published my small project onto [Codeberg](https://codeberg.org/karesztrk/fibo
 
 ## Conclusion
 
-This project obviously was not a big deal for any programmer. What I really want to emphasize is to always learn and never let yourself down by outsourcing thinking. Even if your employer gives you unlimited AI usage (and freezes the training budget - yes, it's happened). Prefer your own judgement and be skeptical. Use search engines (public or meta), experiment, practice and fail gracefully. This is natural.
+This project obviously was not a big deal for any programmer. What I really want to emphasize is to always learn and never let yourself down by outsourcing thinking. Even if your employer gives you unlimited AI usage (and freezes the training budget - yes, it's happened). [They will care when nothing works.](https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html) Prefer your own judgement and be skeptical. Use search engines (public or meta), experiment, practice and fail gracefully. This is natural.
 
 ## References
 
@@ -94,3 +94,4 @@ This project obviously was not a big deal for any programmer. What I really want
 - https://codeberg.org/karesztrk/fibo
 - https://ziglang.org/documentation/0.16.0/
 - https://dbushell.com/2025/01/27/zig-the-good-parts/
+- https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html

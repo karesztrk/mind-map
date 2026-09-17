@@ -45,7 +45,7 @@ So I started working on it with the CLI installer instead.
 # Lists all available packages => OK
 ./package-manager-cli.bin show-pkgs
 
-# Install the TV extension => NOK missing system packages 
+# Install the TV extension => NOK missing system packages
 ./package-manager-cli.bin install TV-SAMSUNG-Extension-Tools
 
 # Install Certificate extension => NOK missing system packages
@@ -140,7 +140,7 @@ sdb devices
 # Connect to the TV
 sdb connect $SAMSUNG_TV_IP
 # Deploy on TV
-tizen install -n Jellyfin.wgt -t $SAMSUNG_TV_NAME 
+tizen install -n Jellyfin.wgt -t $SAMSUNG_TV_NAME
 ```
 
 So I could finally deploy my Jellyfin client on the TV.
@@ -160,6 +160,10 @@ docker run --rm georift/install-jellyfin-tizen $SAMSUNG_TV_IP
 
 Tim's project also points to [another cool place](https://github.com/jeppevinkel/jellyfin-tizen-builds/releases) where `Jellyfin.wgt`
 archives are built daily 😅.
+
+### Update (2026. 09. 17.)
+
+I have just found a very handy "vibe-coded" app called [Apps2Samsung](https://github.com/Apps2Samsung/Apps2Samsung). This tool let's you install any app remotely using it's own interface.
 
 ## References
 
