@@ -262,7 +262,7 @@ input[type="number"] {
 <input type="text" inputmode="numeric" pattern="[0-9]+" />
 ```
 
-### Modal backdrop scrolling
+## Modal backdrop scrolling
 
 ```css
 /**
@@ -404,5 +404,40 @@ See Una's [blog](https://una.im/scroll-target-group/).
 
 :target-current {
   /* styles for active anchor */
+}
+```
+
+### Make the page fill at least the full screen
+
+See [Polypane blog](https://polypane.app/blog/the-root-scroller-and-how-not-to-lose-it/)
+
+```css
+/* old way */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  overflow: auto;
+}
+
+/* modern way */
+body {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 ```
